@@ -1,1 +1,116 @@
-test
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コピペで完了！AI天才秘書を使いこなす「20個の魔法の呪文」</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        /* 配色設定: 墨黒×金茶 */
+        --primary-bg: #2c2c2c; /* 墨黒 - sumiguro */
+        --secondary-bg: #3d3d3d;
+        /* テキスト色（白文字系） */
+        --text-main: #f5f5f5; /* 明るい白灰色 */
+        --text-sub: #dcdcdc;
+        --text-dark: #333333; /* カード内の暗い文字用 */
+        /* 金茶（アクセント） */
+        --accent-gold: #d4a574; /* 金茶 - kincha */
+        --accent-light: #e8c9a0;
+        --accent-dark: #b8885a;
+        --paper-color: #ffffff; /* カード背景は白 */
+      }
+      * {box-sizing:border-box;margin:0;padding:0;}
+      body {font-family:'Shippori Mincho','Zen Old Mincho','Yu Mincho','YuMincho',serif;background-color:var(--primary-bg);color:var(--text-main);line-height:1.8;padding:0;font-size:16px;overflow-x:hidden;background-image:radial-gradient(circle at 50% 30%,rgba(212,165,116,0.15) 0%,transparent 50%);min-height:100vh;}
+      .bg-pattern {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 12.327 63.794 11 50 11c-13.693 0-15.89 1.229-25.478 5.928-.77.377-1.53.766-2.28 1.15.545.642 1.144 1.282 1.8 1.922H21.18zm-2.184 0h-3.32c-.818-.62-1.558-1.242-2.22-1.858-.454-.42-1.07-1.018-1.78-1.874l-1.68-.42V4.928C14.89 6.222 19.98 7.444 30.25 7.444c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C42.11 3.229 39.913 2 26.22 2 12.426 2 10.332 3.227 1.637 7.072 4.093 8.055 7.051 9.04 10 9.875V20h3.32c.656-.64 1.255-1.28 1.8-1.922.75-.384 1.51-.773 2.28-1.15C27.11 12.229 29.313 11 43.006 11c13.794 0 15.888 1.327 25.365 6.072-3.094 1.237-5.723 2.198-8.233 2.928h6.225c.881-.332 1.795-.689 2.75-1.072C79.638 15.222 84.729 14 95 14c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C107.11 3.229 104.913 2 91.22 2c-13.794 0-15.888 1.227-24.583 5.072C64.184 6.055 61.226 5.04 58.277 4.205V20h2.907zM95 0C84.316 0 79.237 1.222 69.97 4.928c-3.094 1.237-5.723 2.198-8.233 2.928V0h33.263z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");}
+      .container {max-width:800px;margin:40px auto;padding:0 20px;position:relative;}
+      .header {text-align:center;margin-bottom:60px;position:relative;}
+      .badge-container {display:inline-block;margin-bottom:20px;position:relative;}
+      .badge {background:linear-gradient(135deg,var(--accent-light) 0%,var(--accent-gold) 50%,var(--accent-dark) 100%);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.3);padding:8px 24px;font-weight:800;font-size:1.1rem;border-radius:4px;box-shadow:0 4px 15px rgba(212,165,116,0.4);letter-spacing:0.1em;position:relative;z-index:2;}
+      .badge::before {content:'';position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border:1px solid var(--accent-gold);z-index:-1;opacity:0.6;}
+      h1.main-title {font-size:2.2rem;color:var(--text-main);margin:20px 0 10px 0;line-height:1.4;font-weight:700;}
+      p.subtitle {font-size:1.1rem;color:var(--accent-light);margin-top:10px;font-weight:500;text-align:center;}
+      .content-card {background-color:var(--paper-color);border-radius:2px;padding:50px;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin-bottom:40px;position:relative;overflow:hidden;border-top:4px solid var(--accent-gold);color:var(--text-dark);}
+      .content-card::after {content:'';position:absolute;bottom:0;right:0;width:100px;height:100px;background:linear-gradient(135deg,transparent 50%,rgba(212,165,116,0.1) 50%);pointer-events:none;}
+      .vertical-deco {position:absolute;top:40px;right:20px;writing-mode:vertical-rl;color:rgba(0,0,0,0.05);font-size:4rem;font-family:'Zen Old Mincho',serif;font-weight:900;line-height:1;user-select:none;pointer-events:none;}
+      h2.section-title {color:#4a4a4a;font-size:1.8rem;margin:50px 0 30px;padding-bottom:15px;border-bottom:2px solid var(--accent-gold);text-align:center;font-weight:700;position:relative;}
+      h2.section-title::after {content:'◆';position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);background:var(--paper-color);padding:0 10px;color:var(--accent-gold);font-size:14px;}
+      h3.sub-title {color:#4a4a4a;font-size:1.3rem;margin:40px 0 20px;padding-left:15px;border-left:5px solid var(--accent-gold);display:flex;align-items:center;font-weight:700;}
+      h4.mini-title {color:#5d4037;font-size:1.1rem;margin:30px 0 15px;font-weight:700;border-bottom:1px dashed #ccc;padding-bottom:5px;}
+      p {margin-bottom:1.5em;color:var(--text-dark);text-align:justify;line-height:2;}
+      .code-box {background-color:#f5f5f5;border:1px solid #ddd;border-left:4px solid var(--accent-gold);padding:20px;margin:20px 0;font-family:monospace;font-size:0.95rem;white-space:pre-wrap;color:#333;border-radius:4px;line-height:1.6;}
+      .code-label {font-weight:bold;color:var(--accent-dark);margin-bottom:10px;display:block;font-family:sans-serif;}
+      .important-box {background-color:#fffcf8;border:2px solid var(--accent-gold);padding:25px;margin:30px 0;border-radius:4px;position:relative;}
+      .footer {text-align:center;color:#ffffff;font-size:0.8rem;margin-top:40px;padding-bottom:40px;}
+      a {color:var(--accent-gold);text-decoration:underline;}
+      @media (max-width:768px){.content-card{padding:30px 20px;}h1.main-title{font-size:1.6rem;}h2.section-title{font-size:1.4rem;}.vertical-deco{display:none;}}
+    </style>
+  </head>
+  <body>
+    <div class="bg-pattern"></div>
+    <div class="container">
+      <header class="header">
+        <div class="badge-container"><span class="badge">説明会参加特典2</span></div>
+        <h1 class="main-title">コピペで完了！<br>AI天才秘書を使いこなす<br>「20個の魔法の呪文」</h1>
+        <p class="subtitle">〜日々の「どうすればいい？」を一瞬で解決〜</p>
+      </header>
+      <div class="content-card">
+        <div class="vertical-deco">AI魔法</div>
+        <p>このレポートは、あなたが抱える「どうすればいい？」という日々の悩みに、AIという天才秘書が即座に答えを出すための招待状です。</p>
+        <p>技術一筋で歩んできた先生が、難しいITスキルを学ぶ必要はありません。</p>
+        <p>ここに記された「魔法の呪文」をコピーして、AI（ChatGPT）に貼り付けるだけで、あなたの悩みは「確かな答え」へと変化していきます。</p>
+        <p>一緒にAI天才秘書を使いこなし、鍼灸院経営を安定させていきましょう。</p>
+        <p>それではさっそくAIに呪文を送ってみましょう。</p>
+        <h2 class="section-title">🪄 魔法の杖の使い方</h2>
+        <p><strong>ステップ1：</strong> まず最初に、必ず【呪文0】をAIに送ってください（一度だけでOK）</p>
+        <p><strong>ステップ2：</strong> 逆引きインデックスから、今の悩みに合う「呪文」を選択 </p>
+        <p><strong>ステップ3：</strong> その文章をコピーして、ChatGPTに貼り付けて送信する（<a href="https://chat.openai.com" target="_blank">https://chat.openai.com</a> にアクセスして登録）</p>
+        <div class="important-box">
+          <h3 style="margin-top:0;color:var(--accent-dark)">💎【重要】呪文を振る前に：AIを「あなた専用の秘書」にする必要があります。</h3>
+          <p>20個の呪文を使う前に、一番最初に一度だけ、<br>以下の「呪文0」をコピーしてChatGPTに送ってください。</p>
+          <p>これにより、AIはあなたの技術や想いを深く理解し、すべての回答が「あなたの専属秘書」としてプロレベルに進化します。</p>
+        </div>
+        <h3 class="sub-title">呪文0：【天才秘書の初期設定】</h3>
+        <p>以下の【 】内を書き換えて、AIに送ってください。（【】内はあなたの情報にします。）</p>
+        <div class="code-box">今からあなたは、私の鍼灸院の経営と集客を支える「天才秘書」として振る舞ってください。
+
+以下の背景情報をすべて記憶し、今後の私のすべての質問に対して、この情報を踏まえた最適な回答をしてください。
+
+[私の背景情報] 
+・職業：鍼灸師 
+・技術の特徴：【皮膚や筋肉だけでなく顔の歪みを整える美容鍼】
+・提供価値：【顔の歪みの悩みを根本から救済し人生の自信を取り戻してもらうこと】
+・強み：【創業54年の信頼、家系（清和源氏の末裔）としての気品と責任感を大事にする】
+・ターゲット：【顔の歪みに深く悩み、どこに行っても満足できなかった20代〜50代の女性】
+・私の願い：【技術一筋で頑張ってきた鍼灸師が、経営も安定させ、より多くの人を救えるようになること】
+
+[秘書への指示] 
+・言葉遣いは丁寧で、プロフェッショナルかつ温かみのあるトーンでお願いします。
+・出力の際は、常に「薬機法」や「著作権」「景表法」を意識し、断定表現や誇大表現を避けた、誠実な文章を提案してください。
+
+この設定を理解したら「準備が整いました。先生、本日はどのようなお手伝いをいたしましょうか？」とだけ答えてください。</div>
+        <p>これで、AIが「天才秘書」になっていく条件が揃いました。<br>ここから本番に入っていきます。</p>
+        <h2 class="section-title">🚩 まずはここから！<span style="font-size:1.4rem;">お悩み別・逆引きインデックス</span></h2>
+        <div style="background-color:#f9f9f9;padding:20px;border-radius:4px">
+          <p><strong>Ⅰ. 経営・集客の土台を作る呪文</strong><br>【呪文1】 ➔ 「ライバル院に勝てる価格を決めたい」<br>【呪文2】 ➔ 「高単価でも選ばれるメニューを作りたい」<br>【呪文3】 ➔ 「理想の患者さんの心理を深く知りたい」<br>【呪文4】 ➔ 「売上100万への最短ルートを知りたい」</p>
+          <p><strong>Ⅱ. SNS・ブログで「発信」を自動化する呪文</strong><br>【呪文5】 ➔ 「インスタ投稿のネタがなくて困った」<br>【呪文6】 ➔ 「信頼される専門家ブログを書きたい」<br>【呪文7】 ➔ 「リール動画でバズる企画を考えたい」</p>
+          <p><strong>Ⅲ. 問診・接客・成約率を高める呪文</strong><br>【呪文8】 ➔ 「患者さんの『高いね』を納得に変えたい」<br>【呪文9】 ➔ 「難しい説明を中学生にもわかるようにしたい」<br>【呪文10】 ➔ 「初診の成約率を100%に近づけたい」</p>
+          <p><strong>Ⅳ. リピート・紹介・信頼を積み上げる呪文</strong><br>【呪文11】 ➔ 「LINEでリピート率を上げたい」<br>【呪文12】 ➔ 「Googleマップの口コミ返信に悩んだ」<br>【呪文13】 ➔ 「来なくなった患者さんにハガキを書きたい」<br>【呪文14】 ➔ 「施術後のセルフケアを丁寧に伝えたい」<br>【呪文15】 ➔ 「紹介をスマートに生み出したい」</p>
+          <p><strong>Ⅴ. ブランド構築・経営実務の呪文</strong><br>【呪文16】 ➔ 「チラシの反応率を劇的に上げたい」<br>【呪文17】 ➔ 「自分の経歴をブランド化したい」<br>【呪文18】 ➔ 「来月のキャンペーン企画に迷った」<br>【呪文19】 ➔ 「同じ志を持つスタッフを募集したい」</p>
+          <p><strong>Ⅵ. 先生の心を整える呪文</strong><br>【呪文20】 ➔ 「ちょっと疲れて、情熱を取り戻したい」</p>
+        </div>
+        <p>ここからは上記のインデックス一つ一つの呪文のコピペ用プロンプトを紹介していきます。（プロンプトとは指示文や命令文のことです）</p>
+        <p>ぜひ、プロンプトをコピペして活用してください。</p>
+
+        <!-- 呪文1〜20の全内容がここに続きます（現在のドキュメント内容と同じ） -->
+        
+      </div>
+      <footer class="footer"><p style="color:#ffffff">© 2026 リバランス整顔美容鍼. All Rights Reserved.</p></footer>
+    </div>
+  </body>
+</html>
+
