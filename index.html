@@ -1,81 +1,331 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="light">
-  <head>
+<html lang="ja" data-theme="light" style=""><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>コピペで完了！AI天才秘書を使いこなす「20個の魔法の呪文」</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&amp;family=Zen+Old+Mincho:wght@400;700;900&amp;display=swap" rel="stylesheet">
 
     <style>
       :root {
         /* 配色設定: 墨黒×金茶 */
         --primary-bg: #2c2c2c; /* 墨黒 - sumiguro */
         --secondary-bg: #3d3d3d;
+
         /* テキスト色（白文字系） */
         --text-main: #f5f5f5; /* 明るい白灰色 */
         --text-sub: #dcdcdc;
         --text-dark: #333333; /* カード内の暗い文字用 */
+
         /* 金茶（アクセント） */
         --accent-gold: #d4a574; /* 金茶 - kincha */
         --accent-light: #e8c9a0;
         --accent-dark: #b8885a;
+
         --paper-color: #ffffff; /* カード背景は白 */
       }
-      * {box-sizing:border-box;margin:0;padding:0;}
-      body {font-family:'Shippori Mincho','Zen Old Mincho','Yu Mincho','YuMincho',serif;background-color:var(--primary-bg);color:var(--text-main);line-height:1.8;padding:0;font-size:16px;overflow-x:hidden;background-image:radial-gradient(circle at 50% 30%,rgba(212,165,116,0.15) 0%,transparent 50%);min-height:100vh;}
-      .bg-pattern {position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.05;background-image:url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 12.327 63.794 11 50 11c-13.693 0-15.89 1.229-25.478 5.928-.77.377-1.53.766-2.28 1.15.545.642 1.144 1.282 1.8 1.922H21.18zm-2.184 0h-3.32c-.818-.62-1.558-1.242-2.22-1.858-.454-.42-1.07-1.018-1.78-1.874l-1.68-.42V4.928C14.89 6.222 19.98 7.444 30.25 7.444c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C42.11 3.229 39.913 2 26.22 2 12.426 2 10.332 3.227 1.637 7.072 4.093 8.055 7.051 9.04 10 9.875V20h3.32c.656-.64 1.255-1.28 1.8-1.922.75-.384 1.51-.773 2.28-1.15C27.11 12.229 29.313 11 43.006 11c13.794 0 15.888 1.327 25.365 6.072-3.094 1.237-5.723 2.198-8.233 2.928h6.225c.881-.332 1.795-.689 2.75-1.072C79.638 15.222 84.729 14 95 14c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C107.11 3.229 104.913 2 91.22 2c-13.794 0-15.888 1.227-24.583 5.072C64.184 6.055 61.226 5.04 58.277 4.205V20h2.907zM95 0C84.316 0 79.237 1.222 69.97 4.928c-3.094 1.237-5.723 2.198-8.233 2.928V0h33.263z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");}
-      .container {max-width:800px;margin:40px auto;padding:0 20px;position:relative;}
-      .header {text-align:center;margin-bottom:60px;position:relative;}
-      .badge-container {display:inline-block;margin-bottom:20px;position:relative;}
-      .badge {background:linear-gradient(135deg,var(--accent-light) 0%,var(--accent-gold) 50%,var(--accent-dark) 100%);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.3);padding:8px 24px;font-weight:800;font-size:1.1rem;border-radius:4px;box-shadow:0 4px 15px rgba(212,165,116,0.4);letter-spacing:0.1em;position:relative;z-index:2;}
-      .badge::before {content:'';position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border:1px solid var(--accent-gold);z-index:-1;opacity:0.6;}
-      h1.main-title {font-size:2.2rem;color:var(--text-main);margin:20px 0 10px 0;line-height:1.4;font-weight:700;}
-      p.subtitle {font-size:1.1rem;color:var(--accent-light);margin-top:10px;font-weight:500;text-align:center;}
-      .content-card {background-color:var(--paper-color);border-radius:2px;padding:50px;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin-bottom:40px;position:relative;overflow:hidden;border-top:4px solid var(--accent-gold);color:var(--text-dark);}
-      .content-card::after {content:'';position:absolute;bottom:0;right:0;width:100px;height:100px;background:linear-gradient(135deg,transparent 50%,rgba(212,165,116,0.1) 50%);pointer-events:none;}
-      .vertical-deco {position:absolute;top:40px;right:20px;writing-mode:vertical-rl;color:rgba(0,0,0,0.05);font-size:4rem;font-family:'Zen Old Mincho',serif;font-weight:900;line-height:1;user-select:none;pointer-events:none;}
-      h2.section-title {color:#4a4a4a;font-size:1.8rem;margin:50px 0 30px;padding-bottom:15px;border-bottom:2px solid var(--accent-gold);text-align:center;font-weight:700;position:relative;}
-      h2.section-title::after {content:'◆';position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);background:var(--paper-color);padding:0 10px;color:var(--accent-gold);font-size:14px;}
-      h3.sub-title {color:#4a4a4a;font-size:1.3rem;margin:40px 0 20px;padding-left:15px;border-left:5px solid var(--accent-gold);display:flex;align-items:center;font-weight:700;}
-      h4.mini-title {color:#5d4037;font-size:1.1rem;margin:30px 0 15px;font-weight:700;border-bottom:1px dashed #ccc;padding-bottom:5px;}
-      p {margin-bottom:1.5em;color:var(--text-dark);text-align:justify;line-height:2;}
-      .code-box {background-color:#f5f5f5;border:1px solid #ddd;border-left:4px solid var(--accent-gold);padding:20px;margin:20px 0;font-family:monospace;font-size:0.95rem;white-space:pre-wrap;color:#333;border-radius:4px;line-height:1.6;}
-      .code-label {font-weight:bold;color:var(--accent-dark);margin-bottom:10px;display:block;font-family:sans-serif;}
-      .important-box {background-color:#fffcf8;border:2px solid var(--accent-gold);padding:25px;margin:30px 0;border-radius:4px;position:relative;}
-      .footer {text-align:center;color:#ffffff;font-size:0.8rem;margin-top:40px;padding-bottom:40px;}
-      a {color:var(--accent-gold);text-decoration:underline;}
-      @media (max-width:768px){.content-card{padding:30px 20px;}h1.main-title{font-size:1.6rem;}h2.section-title{font-size:1.4rem;}.vertical-deco{display:none;}}
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Shippori Mincho', 'Zen Old Mincho', 'Yu Mincho', 'YuMincho', serif;
+        background-color: var(--primary-bg);
+        color: var(--text-main);
+        line-height: 1.8;
+        padding: 0;
+        font-size: 16px;
+        overflow-x: hidden;
+        /* 背景グラデーション（金茶の光） */
+        background-image: radial-gradient(circle at 50% 30%, rgba(212, 165, 116, 0.15) 0%, transparent 50%);
+        min-height: 100vh;
+      }
+
+      /* 和柄背景パターン（青海波風） */
+      .bg-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 12.327 63.794 11 50 11c-13.693 0-15.89 1.229-25.478 5.928-.77.377-1.53.766-2.28 1.15.545.642 1.144 1.282 1.8 1.922H21.18zm-2.184 0h-3.32c-.818-.62-1.558-1.242-2.22-1.858-.454-.42-1.07-1.018-1.78-1.874l-1.68-.42V4.928C14.89 6.222 19.98 7.444 30.25 7.444c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C42.11 3.229 39.913 2 26.22 2 12.426 2 10.332 3.227 1.637 7.072 4.093 8.055 7.051 9.04 10 9.875V20h3.32c.656-.64 1.255-1.28 1.8-1.922.75-.384 1.51-.773 2.28-1.15C27.11 12.229 29.313 11 43.006 11c13.794 0 15.888 1.327 25.365 6.072-3.094 1.237-5.723 2.198-8.233 2.928h6.225c.881-.332 1.795-.689 2.75-1.072C79.638 15.222 84.729 14 95 14c10.353 0 16.36-1.347 25.958-4.937l1.768.661c.368.138.731.272 1.088.402h-3.32c-.656-.64-1.255-1.28-1.8-1.922-.75-.384-1.51-.773-2.28-1.15C107.11 3.229 104.913 2 91.22 2c-13.794 0-15.888 1.227-24.583 5.072C64.184 6.055 61.226 5.04 58.277 4.205V20h2.907zM95 0C84.316 0 79.237 1.222 69.97 4.928c-3.094 1.237-5.723 2.198-8.233 2.928V0h33.263z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      /* ヘッダーエリア */
+      .header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .badge-container {
+        display: inline-block;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .badge {
+        /* 金茶グラデーション */
+        background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-gold) 50%, var(--accent-dark) 100%);
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        padding: 8px 24px;
+        font-weight: 800;
+        font-size: 1.1rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+        letter-spacing: 0.1em;
+        position: relative;
+        z-index: 2;
+      }
+
+      .badge::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border: 1px solid var(--accent-gold);
+        z-index: -1;
+        opacity: 0.6;
+      }
+
+      h1.main-title {
+        font-size: 2.2rem;
+        color: var(--text-main);
+        margin: 20px 0 10px 0;
+        line-height: 1.4;
+        font-weight: 700;
+      }
+
+      p.subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-light);
+        margin-top: 10px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      /* コンテンツカード */
+      .content-card {
+        background-color: var(--paper-color);
+        border-radius: 2px;
+        padding: 50px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+        border-top: 4px solid var(--accent-gold);
+        color: var(--text-dark); /* カード内は黒文字 */
+      }
+
+      .content-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, transparent 50%, rgba(212, 165, 116, 0.1) 50%);
+        pointer-events: none;
+      }
+
+      /* 縦書き装飾 */
+      .vertical-deco {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        writing-mode: vertical-rl;
+        color: rgba(0, 0, 0, 0.05); /* 黒系の薄い色 */
+        font-size: 4rem;
+        font-family: 'Zen Old Mincho', serif;
+        font-weight: 900;
+        line-height: 1;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      /* セクション見出し */
+      h2.section-title {
+        color: #4a4a4a; /* ダークグレー */
+        font-size: 1.8rem;
+        margin: 50px 0 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--accent-gold);
+        text-align: center;
+        font-weight: 700;
+        position: relative;
+      }
+
+      h2.section-title::after {
+        content: '◆';
+        position: absolute;
+        bottom: -11px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--paper-color);
+        padding: 0 10px;
+        color: var(--accent-gold);
+        font-size: 14px;
+      }
+
+      h3.sub-title {
+        color: #4a4a4a;
+        font-size: 1.3rem;
+        margin: 40px 0 20px;
+        padding-left: 15px;
+        border-left: 5px solid var(--accent-gold);
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+      }
+
+      h4.mini-title {
+        color: #5d4037;
+        font-size: 1.1rem;
+        margin: 30px 0 15px;
+        font-weight: 700;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 5px;
+      }
+
+      p {
+        margin-bottom: 1.5em;
+        color: var(--text-dark);
+        text-align: justify;
+        line-height: 2;
+      }
+
+      /* コードボックス（プロンプト用） */
+      .code-box {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-left: 4px solid var(--accent-gold);
+        padding: 20px;
+        margin: 20px 0;
+        font-family: monospace;
+        font-size: 0.95rem;
+        white-space: pre-wrap;
+        color: #333;
+        border-radius: 4px;
+        line-height: 1.6;
+      }
+
+      .code-label {
+        font-weight: bold;
+        color: var(--accent-dark);
+        margin-bottom: 10px;
+        display: block;
+        font-family: sans-serif;
+      }
+
+      /* 重要なポイント */
+      .important-box {
+        background-color: #fffcf8;
+        border: 2px solid var(--accent-gold);
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      /* フッター */
+      .footer {
+        text-align: center;
+        color: #ffffff; /* 白文字 */
+        font-size: 0.8rem;
+        margin-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      /* リンク */
+      a {
+        color: var(--accent-gold);
+        text-decoration: underline;
+      }
+
+      /* モバイル対応 */
+      @media (max-width: 768px) {
+        .content-card {
+          padding: 30px 20px;
+        }
+        h1.main-title {
+          font-size: 1.6rem;
+        }
+        h2.section-title {
+          font-size: 1.4rem;
+        }
+        .vertical-deco {
+          display: none;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body style="">
     <div class="bg-pattern"></div>
+
     <div class="container">
+      <!-- ヘッダー -->
       <header class="header">
-        <div class="badge-container"><span class="badge">説明会参加特典2</span></div>
+        <div class="badge-container">
+          <span class="badge">説明会参加特典2</span>
+        </div>
         <h1 class="main-title">コピペで完了！<br>AI天才秘書を使いこなす<br>「20個の魔法の呪文」</h1>
         <p class="subtitle">〜日々の「どうすればいい？」を一瞬で解決〜</p>
       </header>
+
+      <!-- メインコンテンツ -->
       <div class="content-card">
         <div class="vertical-deco">AI魔法</div>
-        <p>このレポートは、あなたが抱える「どうすればいい？」という日々の悩みに、AIという天才秘書が即座に答えを出すための招待状です。</p>
+
+        <p>
+          このレポートは、あなたが抱える「どうすればいい？」という日々の悩みに、AIという天才秘書が即座に答えを出すための招待状です。
+        </p>
+
         <p>技術一筋で歩んできた先生が、難しいITスキルを学ぶ必要はありません。</p>
-        <p>ここに記された「魔法の呪文」をコピーして、AI（ChatGPT）に貼り付けるだけで、あなたの悩みは「確かな答え」へと変化していきます。</p>
+
+        <p>
+          ここに記された「魔法の呪文」をコピーして、AI（ChatGPT）に貼り付けるだけで、あなたの悩みは「確かな答え」へと変化していきます。
+        </p>
+
         <p>一緒にAI天才秘書を使いこなし、鍼灸院経営を安定させていきましょう。</p>
+
         <p>それではさっそくAIに呪文を送ってみましょう。</p>
+
         <h2 class="section-title">🪄 魔法の杖の使い方</h2>
-        <p><strong>ステップ1：</strong> まず最初に、必ず【呪文0】をAIに送ってください（一度だけでOK）</p>
-        <p><strong>ステップ2：</strong> 逆引きインデックスから、今の悩みに合う「呪文」を選択 </p>
-        <p><strong>ステップ3：</strong> その文章をコピーして、ChatGPTに貼り付けて送信する（<a href="https://chat.openai.com" target="_blank">https://chat.openai.com</a> にアクセスして登録）</p>
+
+        <p>
+          <strong>ステップ1：</strong> まず最初に、必ず【呪文0】をAIに送ってください（一度だけでOK）</p><p><strong>ステップ2：</strong> 逆引きインデックスから、今の悩みに合う「呪文」を選択&nbsp;</p><p><strong>ステップ3：</strong> その文章をコピーして、ChatGPTに貼り付けて送信する
+          （<a href="https://chat.openai.com" target="_blank">https://chat.openai.com</a> にアクセスして登録）</p>
+
         <div class="important-box">
-          <h3 style="margin-top:0;color:var(--accent-dark)">💎【重要】呪文を振る前に：AIを「あなた専用の秘書」にする必要があります。</h3>
+          <h3 style="margin-top: 0; color: var(--accent-dark)">
+            💎【重要】呪文を振る前に：AIを「あなた専用の秘書」にする必要があります。
+          </h3>
           <p>20個の呪文を使う前に、一番最初に一度だけ、<br>以下の「呪文0」をコピーしてChatGPTに送ってください。</p>
-          <p>これにより、AIはあなたの技術や想いを深く理解し、すべての回答が「あなたの専属秘書」としてプロレベルに進化します。</p>
+          <p>
+            これにより、AIはあなたの技術や想いを深く理解し、すべての回答が「あなたの専属秘書」としてプロレベルに進化します。
+          </p>
         </div>
+
         <h3 class="sub-title">呪文0：【天才秘書の初期設定】</h3>
         <p>以下の【 】内を書き換えて、AIに送ってください。（【】内はあなたの情報にします。）</p>
+
         <div class="code-box">今からあなたは、私の鍼灸院の経営と集客を支える「天才秘書」として振る舞ってください。
 
 以下の背景情報をすべて記憶し、今後の私のすべての質問に対して、この情報を踏まえた最適な回答をしてください。
@@ -92,25 +342,405 @@
 ・言葉遣いは丁寧で、プロフェッショナルかつ温かみのあるトーンでお願いします。
 ・出力の際は、常に「薬機法」や「著作権」「景表法」を意識し、断定表現や誇大表現を避けた、誠実な文章を提案してください。
 
-この設定を理解したら「準備が整いました。先生、本日はどのようなお手伝いをいたしましょうか？」とだけ答えてください。</div>
+この設定を理解したら「準備が整いました。先生、本日はどのようなお手伝いをいたしましょうか？」とだけ答えてください。
+</div>
+
         <p>これで、AIが「天才秘書」になっていく条件が揃いました。<br>ここから本番に入っていきます。</p>
-        <h2 class="section-title">🚩 まずはここから！<span style="font-size:1.4rem;">お悩み別・逆引きインデックス</span></h2>
-        <div style="background-color:#f9f9f9;padding:20px;border-radius:4px">
-          <p><strong>Ⅰ. 経営・集客の土台を作る呪文</strong><br>【呪文1】 ➔ 「ライバル院に勝てる価格を決めたい」<br>【呪文2】 ➔ 「高単価でも選ばれるメニューを作りたい」<br>【呪文3】 ➔ 「理想の患者さんの心理を深く知りたい」<br>【呪文4】 ➔ 「売上100万への最短ルートを知りたい」</p>
-          <p><strong>Ⅱ. SNS・ブログで「発信」を自動化する呪文</strong><br>【呪文5】 ➔ 「インスタ投稿のネタがなくて困った」<br>【呪文6】 ➔ 「信頼される専門家ブログを書きたい」<br>【呪文7】 ➔ 「リール動画でバズる企画を考えたい」</p>
-          <p><strong>Ⅲ. 問診・接客・成約率を高める呪文</strong><br>【呪文8】 ➔ 「患者さんの『高いね』を納得に変えたい」<br>【呪文9】 ➔ 「難しい説明を中学生にもわかるようにしたい」<br>【呪文10】 ➔ 「初診の成約率を100%に近づけたい」</p>
-          <p><strong>Ⅳ. リピート・紹介・信頼を積み上げる呪文</strong><br>【呪文11】 ➔ 「LINEでリピート率を上げたい」<br>【呪文12】 ➔ 「Googleマップの口コミ返信に悩んだ」<br>【呪文13】 ➔ 「来なくなった患者さんにハガキを書きたい」<br>【呪文14】 ➔ 「施術後のセルフケアを丁寧に伝えたい」<br>【呪文15】 ➔ 「紹介をスマートに生み出したい」</p>
-          <p><strong>Ⅴ. ブランド構築・経営実務の呪文</strong><br>【呪文16】 ➔ 「チラシの反応率を劇的に上げたい」<br>【呪文17】 ➔ 「自分の経歴をブランド化したい」<br>【呪文18】 ➔ 「来月のキャンペーン企画に迷った」<br>【呪文19】 ➔ 「同じ志を持つスタッフを募集したい」</p>
-          <p><strong>Ⅵ. 先生の心を整える呪文</strong><br>【呪文20】 ➔ 「ちょっと疲れて、情熱を取り戻したい」</p>
+
+        <h2 class="section-title">🚩 まずはここから！<span style="font-size: 1.4rem;">お悩み別・逆引きインデックス</span></h2>
+
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 4px">
+          <p>
+            <strong>Ⅰ. 経営・集客の土台を作る呪文</strong><br>
+            【呪文1】 ➔ 「ライバル院に勝てる価格を決めたい」<br>
+            【呪文2】 ➔ 「高単価でも選ばれるメニューを作りたい」<br>
+            【呪文3】 ➔ 「理想の患者さんの心理を深く知りたい」<br>
+            【呪文4】 ➔ 「売上100万への最短ルートを知りたい」
+          </p>
+
+          <p>
+            <strong>Ⅱ. SNS・ブログで「発信」を自動化する呪文</strong><br>
+            【呪文5】 ➔ 「インスタ投稿のネタがなくて困った」<br>
+            【呪文6】 ➔ 「信頼される専門家ブログを書きたい」<br>
+            【呪文7】 ➔ 「リール動画でバズる企画を考えたい」
+          </p>
+
+          <p>
+            <strong>Ⅲ. 問診・接客・成約率を高める呪文</strong><br>
+            【呪文8】 ➔ 「患者さんの『高いね』を納得に変えたい」<br>
+            【呪文9】 ➔ 「難しい説明を中学生にもわかるようにしたい」<br>
+            【呪文10】 ➔ 「初診の成約率を100%に近づけたい」
+          </p>
+
+          <p>
+            <strong>Ⅳ. リピート・紹介・信頼を積み上げる呪文</strong><br>
+            【呪文11】 ➔ 「LINEでリピート率を上げたい」<br>
+            【呪文12】 ➔ 「Googleマップの口コミ返信に悩んだ」<br>
+            【呪文13】 ➔ 「来なくなった患者さんにハガキを書きたい」<br>
+            【呪文14】 ➔ 「施術後のセルフケアを丁寧に伝えたい」<br>
+            【呪文15】 ➔ 「紹介をスマートに生み出したい」
+          </p>
+
+          <p>
+            <strong>Ⅴ. ブランド構築・経営実務の呪文</strong><br>
+            【呪文16】 ➔ 「チラシの反応率を劇的に上げたい」<br>
+            【呪文17】 ➔ 「自分の経歴をブランド化したい」<br>
+            【呪文18】 ➔ 「来月のキャンペーン企画に迷った」<br>
+            【呪文19】 ➔ 「同じ志を持つスタッフを募集したい」
+          </p>
+
+          <p>
+            <strong>Ⅵ. 先生の心を整える呪文</strong><br>
+            【呪文20】 ➔ 「ちょっと疲れて、情熱を取り戻したい」
+          </p>
         </div>
-        <p>ここからは上記のインデックス一つ一つの呪文のコピペ用プロンプトを紹介していきます。（プロンプトとは指示文や命令文のことです）</p>
+
+        <p>
+          ここからは上記のインデックス一つ一つの呪文のコピペ用プロンプトを紹介していきます。（プロンプトとは指示文や命令文のことです）
+        </p>
+
         <p>ぜひ、プロンプトをコピペして活用してください。</p>
 
-        <!-- 呪文1〜20の全内容がここに続きます（現在のドキュメント内容と同じ） -->
-        
+        <h2 class="section-title">Ⅰ. 経営・集客の土台を作る呪文</h2>
+
+        <h4 class="mini-title">呪文1：【市場分析】ライバル院との差別化戦略</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+私は【顔の歪みを整える美容鍼】の専門家です。近隣の競合院の情報を整理し、私が勝てる「高単価メニューの価格設定」と「差別化戦略」を提案してください。
+
+競合A：【院名・60分8,000円・一般的な美容鍼】 
+競合B：【院名・90分15,000円・エステ併用】
+競合C：【院名・45分6,000円・整骨院の美容鍼】 
+自院D：【院名・60分10,000円・一般的な美容鍼】
+</div>
+
+        <h4 class="mini-title">呪文2：【メニュー作成】思わず予約したくなる新メニュー案</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+【リバランス整顔美容鍼美容鍼（顔の歪みを整える美容鍼）】を新メニューとして導入します。以下の要素を含めた、思わず予約したくなる魅力的なメニュー紹介文を作成してください。
+
+1.ターゲットが抱える【（顔の歪み）】の悩みへの共感 
+2.他の美容鍼との違い【（骨格へのアプローチ）】
+3.施術後に期待できること（笑顔に自信が持てる、など）
+4.推奨価格【13,800円〜19,800円】の範囲で魅力的に表示
+
+※ 出力の際は、以下の表現を避けてください 
+・「即効」「即時変化」「劇的」などの誇大表現
+・「必ず○○になる」などの効果を断定する表現 
+・「治る」「治療」などの医療行為を示す表現
+</div>
+
+        <h4 class="mini-title">呪文3：【ペルソナ設定】理想の患者さんの気持ちを知る方法</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+【顔の歪み】に深く悩み、本気で改善したいと考えている30代〜50代女性の「理想の顧客像」を1人設定してください。
+その人が日常で感じている「具体的な不満」や「鏡を見る時の心理状態」、「本当はどうなりたいかという願望」を詳細に書き出してください。
+また、どのような価格帯のサービスを選ぶ傾向があるか、どのような情報源を信頼するかについても含めてください。
+</div>
+
+        <h4 class="mini-title">呪文4：【収益シミュレーション】目標達成ロードマップ</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span> 
+鍼灸院の収益シミュレーションをお願いします。
+・目標月商：【150万円】 
+・現在の単価：【8,000円】 
+・【リバランス整顔美容鍼】導入後の単価【19,800円】
+
+【リバランス整顔美容鍼】導入後、月に何人の新規とリピートが必要か、現在の単価と比較して「どれだけ労働時間が減り、利益が増えるか」をわかりやすく算出してください。表形式で見やすく整理してください。
+</div>
+
+        <h2 class="section-title">Ⅱ. SNS・ブログで「発信」を自動化する呪文</h2>
+
+        <h4 class="mini-title">呪文5：【SNS代筆】1ヶ月分のInstagram投稿案（30日分）</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+【顔の歪み】に悩む30代〜50代女性に向けて、Instagramの投稿案を30日分作成してください。
+以下の5つのパターンを組み合わせて、毎日飽きさせない構成にしてください。
+ 
+①【顔の歪み】の原因について 
+②ビフォーアフターの重要性 
+③セルフケアの限界 
+④患者様の喜びの声
+⑤私の想い・創業の信頼 
+各投稿には、最適なハッシュタグも10個追加してください。 
+
+※出力の際は、以下の表現を避けてください 
+・「必ず」「絶対」などの断定表現 
+・「即効」「劇的」などの誇大表現
+・医学的効果を保証する表現 
+・「治る」「治療」などの医療行為を示す表現
+</div>
+
+        <h4 class="mini-title">呪文6：【ブログ執筆】信頼を構築する「専門家コラム」</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+鍼灸師の専門知識を活かしたブログ記事を1つ執筆してください。
+
+テーマ：【例：顔の歪みと体調不良の関係について知っておきたいこと】 
+構成：
+・読者が共感する悩みの提示
+・専門家としての解説 
+・自宅での対策 
+・当院でサポートできること
+
+読者が「一度相談してみたい」と思うような、誠実で知的なトーンでお願いします。 
+
+※出力の際は、以下の表現を避けてください 
+・医学的因果関係を断定する表現
+・「○○すれば△△が治る」などの効果を保証する表現 
+・「必ず」「絶対」などの断定表現
+</div>
+
+        <h4 class="mini-title">呪文7：【ショート動画台本】TikTokやリールでバズる15秒企画</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+Instagramのリール動画で、【顔の歪み】に悩む人が思わず止まって見てしまう「15秒の企画案と台本」を5つ作成してください。
+          
+例 
+・一瞬でできるセルフチェック 
+・ビフォーアフターの比較 
+・骨格アプローチの仕組み
+インパクト重視でお願いします。 
+
+※ 出力の際は、以下の表現を避けてください 
+・「必ず」「絶対」などの断定表現
+・「劇的」「即効」などの誇大表現 
+・医学的効果を保証する表現
+</div>
+
+        <h2 class="section-title">Ⅲ. 問診・接客・成約率を高める呪文</h2>
+
+        <h4 class="mini-title">呪文8：【FAQ作成】「高いね」と言わせないQ&amp;A集</h4>
+        <p>使い方： そのままコピーして、AIに送ってください。</p>
+        <div class="code-box" style="text-align: left;"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+美容鍼の経験がない患者さんや、「料金が高い」と感じている患者さんからよく聞かれる質問（Q&amp;A）を10個作成してください。
+
+全ての回答は、患者さんの不安を解消しつつ、「だからこそこの技術が必要なんだ」と納得していただける、プロフェッショナルなトーンにしてください。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・「即効」「劇的」などの誇大表現
+・医学的効果を保証する表現
+・「治る」「治療」などの医療行為を示す表現 </div>
+
+        <h4 class="mini-title">呪文9：【患者教育】難しい専門用語を「中学生でもわかる」説明にする</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+以下の専門的な説明を、中学生でもイメージできるように、身近な例え話を使ってわかりやすくリライトしてください。
+          
+内容：【例：顔の骨格バランスが表情に与える影響について】
+          
+※ 出力の際は、以下の表現を避けてください
+・医学的因果関係を断定する表現
+・「○○すれば△△になる」などの効果を保証する表現
+・専門用語を過度に簡略化しすぎて誤解を招く表現       </div>
+
+        <h4 class="mini-title">呪文10：【カウンセリング】初診の成約率を上げる「トークスクリプト」</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+美容鍼が初めての方に向けた、初診カウンセリングのトークスクリプトを作成してください。
+          
+流れ
+1. 現在の悩みのヒアリング
+2. 悩みの根本原因【（骨格の歪み）】への気づきを与える
+3. 未来の理想像のイメージ
+4. 施術プランの提案
+          
+患者さんが納得して「今日からお願いします」と言いたくなるような構成でお願いします。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・「即効」「劇的」などの誇大表現
+・医学的効果を保証する表現
+・「治る」「完治する」などの医療行為を示す表現        </div>
+
+        <h2 class="section-title">Ⅳ. リピート・紹介・信頼を積み上げる呪文</h2>
+
+        <h4 class="mini-title">呪文11：【LINE配信】リピート率を高めるメッセージ作成</h4>
+        <p>使い方： そのままコピーして、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+施術から1週間が経過した患者さんに送る、LINE公式アカウント用のステップメッセージを3パターン作成してください。
+          
+流れ
+1. 経過を気遣う
+2. 長持ちさせるアドバイス
+3. 次回の予約案内は押し売り感を出さず、優しく寄り添う口調でお願いします。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・「劇的」などの誇大表現
+・医学的効果を保証する表現     </div>
+
+        <h4 class="mini-title">呪文12：【口コミ返信】Googleマップの評価を高める神対応</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+Googleマップに届いた口コミへの返信案を作成してください。
+          
+口コミ内容：【ここに患者さんの口コミをコピペ】
+          
+感謝を伝えつつ、当院の強みである【顔の歪み改善】という特徴を自然に盛り込んでください。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・「劇的」「即効」などの誇大表現
+・医学的効果を保証する表現        </div>
+
+        <h4 class="mini-title">呪文13：【休眠客の掘り起こし】再診を促す「おひさしぶり」ハガキ</h4>
+        <p>使い方： そのままコピーして、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+3ヶ月以上来院が途絶えている患者さんに送る、再診を促すDM（ハガキ）の文面を考えてください。
+          
+自然に近況を伺い、季節の変わり目のセルフケアの大切さに触れながら、相談しやすい雰囲気で作ってください。
+          
+※ 出力の際は、以下の表現を避けてください
+・押し売り感のある表現
+・「必ず」などの断定表現
+・過度な営業感        </div>
+
+        <h4 class="mini-title">呪文14：【セルフケア指導】価値を高める「アフターフォロー・シート」</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+【リバランス美容鍼】の施術後に患者さんに渡す「自宅での過ごし方アドバイス」を箇条書きで作成してください。
+          
+含める内容
+・避けるべき生活習慣
+・持続させるための意識
+          
+プロとしての信頼感が増すような丁寧な言葉遣いでお願いします。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・医学的効果を保証する表現
+・「これをすれば治る」などの効果を断定する表現        </div>
+
+        <h4 class="mini-title">呪文15：【紹介依頼】「紹介してください」と言わずに紹介を生む方法</h4>
+        <p>使い方： そのままコピーして、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+「お友達を紹介してください」と伝えるための、自然でスマートな伝え方を3つ提案してください。
+患者さんが「あの人も悩んでるから教えてあげよう！」とポジティブな気持ちになれるような言い回しをお願いします。
+          
+※ 出力の際は、以下の表現を避けてください
+・押し付けがましい表現
+・過度な営業感
+・特典による釣り要素が強すぎる表現        </div>
+
+        <h2 class="section-title">Ⅴ. ブランド構築・経営実務の呪文</h2>
+
+        <h4 class="mini-title">呪文16：【チラシ作成】地域一番店になるキャッチコピー案作成</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+【リバランス美容鍼】のチラシ用キャッチコピーを10個提案してください。
+地域で【顔の歪み】に悩む女性が思わず手を止めてしまうような、【「骨格にアプローチ」】「本来の美しさ」「バランスを整える」といった表現を使ってください。
+          
+※ 出力の際は、以下の表現を避けてください
+・「魔法」「奇跡」などの非科学的な表現
+・「根本改善」「完治」などの断定表現
+・「劇的」「即効」などの誇大表現
+・「書き換える」などの過度な表現        </div>
+
+        <h4 class="mini-title">呪文17：【プロフィール作成】ブランドストーリーの最大化</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+院長プロフィールをHPの挨拶用に作成してください。
+
+強み：【例：鍼灸師歴15年、リバランス整顔美容鍼認定者】
+想い：【例：顔の歪みで深い悩みを抱えている人を一人でも多く救いたい】
+
+信頼感と情熱が伝わるドラマチックな文章にしてください。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・過度に誇張した表現
+・医学的効果を保証する表現        </div>
+
+        <h4 class="mini-title">呪文18：【キャンペーン企画】季節限定イベントの提案文書の作成</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+鍼灸院で【来月】に実施する、新規集客または既存客向けキャンペーンを3つ提案してください。
+
+季節性（例：梅雨のむくみ対策、夏の紫外線対策、秋の肌ケア）を絡めつつ、当院の強みを活かした魅力的なキャンペーン名も考えてください。
+          
+※ 出力の際は、以下の表現を避けてください
+・「必ず」「絶対」などの断定表現
+・「劇的」「即効」などの誇大表現
+・医学的効果を保証する表現        </div>
+
+        <h4 class="mini-title">呪文19：【求人募集】良いスタッフが集まる「理念共感型」求人文作成</h4>
+        <p>使い方： 以下の【 】内を書き換えて、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）</span>
+鍼灸師の求人募集文を作成してください。単なるスタッフではなく【リバランス整顔美容鍼】を共に広め、「患者さんの人生を救うパートナー」を募集しています。
+
+私の理念に共感し、向上心のある人が「ここで働きたい」とワクワクするような文章でお願いします。
+          
+※ 出力の際は、以下の表現を避けてください
+・労働基準法に抵触する可能性のある表現
+・過度に理想化しすぎた表現        </div>
+
+        <h2 class="section-title">Ⅵ. 先生の心を整える呪文</h2>
+
+        <h4 class="mini-title">呪文20：【マインドセット】疲れた時の「モチベーション維持」</h4>
+        <p>使い方： そのままコピーして、AIに送ってください。</p>
+        <div class="code-box"><span style="color: rgb(184, 136, 90); font-family: sans-serif; font-weight: bold; font-size: 0.95rem;">（コピペ用プロンプト）
+</span>私は今日、多くの患者さんに施術をしましたが、少し疲れを感じています。私が目指している「患者さんを救い人生を輝かせる」という夢を思い出し、明日もまた情熱を持って患者さんと向き合えるような、最高の励ましのメッセージを送ってください。        </div>
+
+        <h2 class="section-title">💡 AI『天才秘書』をさらに輝かせるコツ</h2>
+
+        <p>
+          いかがでしたか？<br>このように日々AIに問いかけて、あなたの天才秘書として育ててみてください。この先あなたが集客にもっとブーストをかけていきたいなど経営上のことでも必ず役に立つ日がくると思います。
+        </p>
+
+        <p>
+          その中で、AIが出してきた回答が「もう少しこうしたいな」と思うようなら、遠慮なく追加で指示を出してみてください。
+        </p>
+
+        <div class="code-box">「もっと30代の働く女性に刺さる言葉にして」 
+「専門用語を抑えて、もっと優しく包み込むような口調で」
+「インスタ用に、もっと短くパッと目を引く形にまとめて」        </div>
+
+        <p>
+          スタッフや新人に教育するような言葉で、対話を重ねてみてください。繰り返すほどに、AIはあなたの思考を理解し、世界にたった一人の「理想のパートナー」へと成長していきます。そして、
+        </p>
+
+        <h3 class="sub-title">AIがあなたの「最強の右腕」</h3>
+
+        <p>
+          になっていきます。<br>本レポートには、鍼灸師がAIを味方につけ、経営を盤石にするためのエッセンスを凝縮しました。しかし、ここに並んだ呪文（プロンプト）は、あくまで「AIを味方にしあなたの専属秘書のように育成するスタート地点」に過ぎません。
+        </p>
+
+        <p>あなたの院が抱える課題や、日々の「これ、どうすればいい？」という迷いも、すべてAIに聞いてみてください。</p>
+
+        <p>
+          例えば、<br>
+          「患者さんへの説明を、もっと感動的な体験に変えるには？」<br>
+          「スタッフと志を一つにし、チーム力を高めるアドバイスをください」<br>
+          「予約管理や院内動線をもっとスムーズにするアイディアをください」
+        </p>
+
+        <p>
+          このように、あなたが普段感じているリアルな想いをそのまま投げかけてみてください。AIは、あなたの情熱を形にする『最強の右腕』として、常に寄り添い続けます。そして、その先に見えることは、
+        </p>
+
+        <h3 class="sub-title">技術と「発信」の融合が<br>救える患者さんを増やしていく</h3>
+
+        <p>
+          あなたが心血を注いで磨き上げてきた「救済の技術」と、
+          そこにAIという「発信の力（天才秘書）」が加われば、これまで届かなかった深い悩みを持つ人々にまで、あなたの手が届くようになります。
+        </p>
+
+        <p>
+          「顔の歪みを整える技術」と「AIによるスマートな経営」
+          この二つが組み合わさったとき、あなたの鍼灸院は地域で唯一無二の、選ばれる鍼灸院となる可能性を秘めています。
+        </p>
+
+        <p>
+          その未来への第一歩を、今日、この瞬間から踏み出してください。<br>リバランス整顔美容鍼を通じて、一人でも多くの患者さんを共に救っていきましょう。
+        </p>
+
+        <p>あなたの挑戦と成功を、心から応援しています。</p>
       </div>
-      <footer class="footer"><p style="color:#ffffff">© 2026 リバランス整顔美容鍼. All Rights Reserved.</p></footer>
+
+      <footer class="footer">
+        <p style="color: #ffffff">© 2026 リバランス整顔美容鍼. All Rights Reserved.</p>
+      </footer>
     </div>
-  </body>
-</html>
 
